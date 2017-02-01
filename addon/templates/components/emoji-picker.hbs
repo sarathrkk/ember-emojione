@@ -15,14 +15,14 @@
   id    = {{scrollableId}}
 >
   {{#each emojiService.categories as |category|}}
-    {{#with (get emojiByCategoryIdFiltered category.id) as |emoji|}}
+    {{#let (get emojiByCategoryIdFiltered category.id) as |emoji|}}
       {{emoji-picker/category
         emoji        = emoji
         category     = category
         filterInput  = filterInput
         selectAction = selectAction
       }}
-    {{/with}}
+    {{/let}}
   {{/each}}
 </div>{{! .eeo-emojiPicker-scrollable }}
 

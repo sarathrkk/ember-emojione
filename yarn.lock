@@ -2028,6 +2028,13 @@ ember-invoke-action@1.4.0:
   dependencies:
     ember-cli-babel "^5.1.6"
 
+ember-let@^0.5.4:
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/ember-let/-/ember-let-0.5.4.tgz#4a5bb0a280db396e45f359c428823610c8c41c8e"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+    ember-cli-version-checker "^1.1.6"
+
 ember-load-initializers@^0.6.0:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/ember-load-initializers/-/ember-load-initializers-0.6.3.tgz#f47396ad271ba77294068c98f992a5f19705441a"

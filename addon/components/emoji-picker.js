@@ -4,6 +4,8 @@ import {htmlSafe} from 'ember-string';
 import {throttle} from 'ember-runloop';
 import layout from '../templates/components/emoji-picker';
 import service from 'ember-service/inject';
+import get from 'ember-metal/get';
+import set from 'ember-metal/set';
 
 import {A} from 'ember-array/utils';
 import {default as EObject} from 'ember-object';
@@ -58,21 +60,20 @@ export default Component.extend({
     'emojiService.currentSkinToneEmoji__flags',
     function () {
       const filterInput = this.get('filterInput');
-      const filterStrs  = filterInput.length ? filterInput.split(' ') : null;
+      const filterStrs  = filterInput.length ? filterInput.split(' ') : false;
 
       return this
         .get('emojiService.categories')
         .reduce((result, category) => {
           const categoryId      = category.get('id');
           const emojiPropName   = `emojiService.currentSkinToneEmoji__${categoryId}`;
-          const emojiUnfiltered = this.get(emojiPropName);
+          const emoji           = this.get(emojiPropName);
 
-          const emojiFiltered =
-            filterStrs
-            ? emojiUnfiltered.filter(emojo => filterStrs.every(str => emojo.filterable.indexOf(str) > -1))
-            : emojiUnfiltered;
+          emoji.forEach(emojo => {
+            set(emojo, 'isVisible', filterStrs ? filterStrs.every(str => get(emojo, 'filterable').indexOf(str) > -1) : true);
+          });
 
-          result.set(categoryId, emojiFiltered);
+          result.set(categoryId, emoji);
           return result;
         }, O());
     }
