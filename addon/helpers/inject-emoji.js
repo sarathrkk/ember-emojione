@@ -119,7 +119,7 @@ const InjectEmoji = Helper.extend({
 
 
   _injectEmojiWithEmojiOne(inputStr) {
-    return emojione.toImage(inputStr);
+    return emojione.shortnameToUnicode(inputStr);
   }
 });
 
