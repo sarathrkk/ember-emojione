@@ -1,15 +1,3 @@
-<nav class = "eeo-emojiPicker-nav">
-  {{#each categorySections as |categoryObj index|}}
-    {{emoji-picker/label
-      categoryObj  = categoryObj
-      visibleCount = (get (get emojiByCategoryIdFiltered categoryObj.category.id) 'visibleCount')
-      scrollableId = scrollableId
-    }}
-  {{/each}}
-</nav>
-
-
-
 <div
   class = "eeo-emojiPicker-scrollable"
   id    = {{scrollableId}}
