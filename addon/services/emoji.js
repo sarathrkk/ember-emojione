@@ -36,13 +36,6 @@ export default Service.extend({
 
   categories: A([
     O({id: "people",   name: "Smileys & People", icon: htmlSafe(":grinning:")}),
-    O({id: "nature",   name: "Animals & Nature", icon: htmlSafe(":deciduous_tree:")}),
-    O({id: "food",     name: "Food & Drink",     icon: htmlSafe(":pizza:")}),
-    O({id: "activity", name: "Activity",         icon: htmlSafe(":cartwheel:")}),
-    O({id: "travel",   name: "Travel & Places",  icon: htmlSafe(":ship:")}),
-    O({id: "objects",  name: "Objects",          icon: htmlSafe(":hammer:")}),
-    O({id: "symbols",  name: "Symbols",          icon: htmlSafe(":heart:")}),
-    O({id: "flags",    name: "Flags",            icon: htmlSafe(":flag_aq:")}),
     // "regional",
     // "modifier",
   ]),
