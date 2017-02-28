@@ -57,7 +57,8 @@ const InjectEmoji = Helper.extend({
 
         ...envOptions.emojione  || {},
 
-        sprites: opts.spriteSheet,
+        sprites: false,
+        imageType: 'png',
 
         ...overrideOptions.emojione || {},
       }
