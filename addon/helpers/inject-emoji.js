@@ -62,6 +62,7 @@ const InjectEmoji = Helper.extend({
 
         ...overrideOptions.emojione || {},
         ascii: true,
+        unicodeAlt: false,
       }
     };
   },
